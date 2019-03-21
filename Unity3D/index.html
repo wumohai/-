@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://yoursite.com/Unity3D/index.html">
 <meta property="og:site_name" content="吴少年">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-20T13:19:12.866Z">
+<meta property="og:updated_time" content="2019-03-21T03:05:43.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity3D">
 
@@ -227,23 +227,6 @@
         
         
           
-          <li class="menu-item menu-item-unity3d">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/Unity3D" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>Unity3D</a>
-
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
 
     
@@ -255,6 +238,40 @@
     
 
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
 
@@ -287,6 +304,9 @@
             
 
     
+    
+      
+      
     
       
       
@@ -354,6 +374,10 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+
+  
 
 
 
@@ -391,14 +415,35 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives">
+                  <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
 
               
@@ -614,6 +659,36 @@
   
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'S2R1sicOYjzw93RKE4olFNdg',
+    appKey: 'vpqE8e1CB0q2GaeVOIt5OJov',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+
 
 
   
