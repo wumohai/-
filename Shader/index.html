@@ -768,6 +768,8 @@
 
 
 
+  
+
 
 
   
@@ -778,6 +780,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -839,7 +844,7 @@
   new Valine({
     el: '#comments',
     verify: false,
-    notify: false,
+    notify: true,
     appId: 'S2R1sicOYjzw93RKE4olFNdg-gzGzoHsz',
     appKey: 'vpqE8e1CB0q2GaeVOIt5OJov',
     placeholder: 'Just go go',
@@ -1257,6 +1262,15 @@ if ($('body').find('pre.mermaid').length) {
   
 
   
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.loadBookmark();
+  
+  </script>
+
 
   
 
