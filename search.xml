@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android-Studio-导入项目在-Building-gradle-project-info-一直卡住]]></title>
+    <url>%2F2019%2F04%2F10%2FAndroid-Studio-%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%9C%A8-Building-gradle-project-info-%E4%B8%80%E7%9B%B4%E5%8D%A1%E4%BD%8F-1%2F</url>
+    <content type="text"><![CDATA[Android Studio导入项目的时候一直卡在Building gradle project info这一步，主要原因还是因为被墙的结果。Gradle官网虽然可以正常访问，但是下载还是一直龟速。 （自己的已经解决，借用网上的图） 解决方案如下： 查看自己这个目录“C:\Users\用户名.gradle\wrapper\dists\gradle-x.xx-all\xxxxxxxxxxxxxxx”, 这里可以看到你的版本号。这个文件夹下面的gradleXXX的大小为0说明没下载完。可以去gradle官网下载对应版本。官网地址自行百度。 下载完成之后吧对应的gradlexxx.zip放到改目录下。 重启gradle，打开一个已有的项目或者新建一个项目就可以解决了。]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[IOS自动增加build和Version]]></title>
     <url>%2F2019%2F04%2F09%2FIOS%E8%87%AA%E5%8A%A8%E5%A2%9E%E5%8A%A0build%E5%92%8CVersion%2F</url>
     <content type="text"><![CDATA[在IOS提审过程中，要求需要build号版本比现在有的版本号要大。每次release的时候需要去增加Build号，有时候难免忘记。所以添加一个打包脚本，每次release的时候自动build号加1。version为1.1.build号。 添加脚本方式为选中项目-》target-》Build Phases-》+RunScript。将下面脚本拷贝放到里面去。 1234567891011121314151617181920if [ $CONFIGURATION == Release ]; thenecho "Bumping build number..."plist=$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;buildnum=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$&#123;plist&#125;")if [[ "$&#123;buildnum&#125;" == "" ]]; thenecho "No build number in $plist"exit 2fibuildnum=`echo $buildnum +1|bc`/usr/libexec/Plistbuddy -c "Set CFBundleVersion $buildnum" "$&#123;plist&#125;"/usr/libexec/Plistbuddy -c "Set CFBundleShortVersionString 1.1.$buildnum" "$&#123;plist&#125;"echo "Bumped build number to $buildnum"elseecho $CONFIGURATION " build - Not bumping build number."fi]]></content>
